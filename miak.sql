@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Jul 2019 pada 00.16
+-- Waktu pembuatan: 25 Jul 2019 pada 06.54
 -- Versi server: 10.1.31-MariaDB
 -- Versi PHP: 7.2.3
 
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `miak`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `bahan_baku`
+--
+
+CREATE TABLE `bahan_baku` (
+  `id_bahan_baku` int(11) NOT NULL,
+  `nama_bahan_baku` varchar(100) NOT NULL,
+  `satuan_bahan_baku` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `bahan_baku`
+--
+
+INSERT INTO `bahan_baku` (`id_bahan_baku`, `nama_bahan_baku`, `satuan_bahan_baku`) VALUES
+(8, 'Telor', 'buah'),
+(9, 'tepung', 'kg');
 
 -- --------------------------------------------------------
 
@@ -50,16 +70,16 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_barang`, `nama_barang`, `jumlah`, `harga`, `satuan`, `biaya_pemesanan`, `biaya_penyimpanan`, `lt`, `sl`, `eoq`, `frekuensi_pemesanan`, `rop`, `ss`, `status`) VALUES
-('A001', 'Gelatin', 8410, 2000, 'kg', 2000, 900, 3, 2.05, 2108, 474, 8219, 16849, 'B'),
-('A002', 'Tepung Terigu', 1987411, 3000, 'kg', 2000, 90, 23, 2.05, 9428, 212, 126027, 258356, 'B'),
-('A003', 'Susu Cair', 987911, 1000, 'liter', 2000, 40, 3, 2.05, 10000, 100, 8219, 16849, 'B'),
-('A004', 'Telur', 6289, 100, 'buah', 2000, 3, 3, 2.05, 1633, 1, 16, 34, 'B'),
-('A005', 'Mentega', 366411, 3000, 'buah', 2000, 90, 3, 2.05, 4110, 92, 3123, 6403, 'B'),
-('A006', 'Cokelat Bubuk', 987411, 3000, 'kg', 2000, 60, 3, 2.05, 8165, 122, 8219, 16849, 'B'),
-('A007', 'Selai Strawberry', 1987411, 45000, 'kg', 2000, 1350, 3, 2.05, 2434, 822, 16438, 33699, 'B'),
-('A008', 'Selai Blueberry', 987911, 45000, 'kg', 2000, 900, 3, 2.05, 2108, 474, 8219, 16849, 'B'),
-('A009', 'Selai Nanas', 987411, 45000, 'buah', 2000, 1350, 3, 2.05, 1721, 581, 8219, 16849, 'B'),
-('B001', 'Cokelat', 984911, 1000, 'kg', 2000, 30, 2, 2.05, 11547, 87, 5479, 11233, 'B');
+('A001', 'Gelatin', 8394, 2000, 'kg', 2000, 900, 3, 2.05, 2108, 474, 8219, 16849, 'B'),
+('A002', 'Tepung Terigu', 1987395, 3000, 'kg', 2000, 90, 23, 2.05, 9428, 212, 126027, 258356, 'B'),
+('A003', 'Susu Cair', 987895, 1000, 'liter', 2000, 40, 3, 2.05, 10000, 100, 8219, 16849, 'B'),
+('A004', 'Telur', 6273, 100, 'buah', 2000, 3, 3, 2.05, 1633, 100, 16, 34, 'B'),
+('A005', 'Mentega', 366395, 3000, 'buah', 2000, 90, 3, 2.05, 4110, 92, 3123, 6403, 'B'),
+('A006', 'Cokelat Bubuk', 987395, 3000, 'kg', 2000, 60, 3, 2.05, 8165, 122, 8219, 16849, 'B'),
+('A007', 'Selai Strawberry', 1987395, 45000, 'kg', 2000, 1350, 3, 2.05, 2434, 822, 16438, 33699, 'B'),
+('A008', 'Selai Blueberry', 987895, 45000, 'kg', 2000, 900, 3, 2.05, 2108, 474, 8219, 16849, 'B'),
+('A009', 'Selai Nanas', 987395, 45000, 'buah', 2000, 1350, 3, 2.05, 1721, 581, 8219, 16849, 'B'),
+('B001', 'Cokelat', 984895, 1000, 'kg', 2000, 30, 2, 2.05, 11547, 87, 5479, 11233, 'B');
 
 -- --------------------------------------------------------
 
@@ -101,13 +121,28 @@ CREATE TABLE `komposisi` (
   `coklat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data untuk tabel `komposisi`
+-- Struktur dari tabel `komposisis`
 --
 
-INSERT INTO `komposisi` (`id_komposisi`, `id_barang`, `gelatin`, `tepung_terigu`, `susu_cair`, `telur`, `mentega`, `coklat_bubuk`, `selai_strawberry`, `selai_blueberry`, `selai_nanas`, `coklat`) VALUES
-(1, 'A1', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-(2, 'A2', 1, 2, 1, 3, 4, 2, 2, 1, 2, 7);
+CREATE TABLE `komposisis` (
+  `id_komposisi` int(11) NOT NULL,
+  `id_barang_tersedia` varchar(20) NOT NULL,
+  `id_bahan_baku` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `komposisis`
+--
+
+INSERT INTO `komposisis` (`id_komposisi`, `id_barang_tersedia`, `id_bahan_baku`, `jumlah`) VALUES
+(4, 'A1', 8, 2),
+(6, 'A1', 9, 12),
+(7, 'A2', 8, 2),
+(10, 'A2', 9, 13);
 
 -- --------------------------------------------------------
 
@@ -151,15 +186,6 @@ CREATE TABLE `orderan_untuk_supplier` (
   `status` enum('B','P','S') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `orderan_untuk_supplier`
---
-
-INSERT INTO `orderan_untuk_supplier` (`id_orderan_untuk_supplier`, `id_pesanan`, `jumlah`, `satuan`, `tgl`, `status`) VALUES
-(3, 'A001', 16849, 'kg', '2019-06-24', 'S'),
-(5, 'A001', 16849, 'kg', '2019-06-24', 'S'),
-(6, 'A001', 16849, 'kg', '2019-06-24', 'S');
-
 -- --------------------------------------------------------
 
 --
@@ -200,36 +226,10 @@ CREATE TABLE `trx_bk` (
 --
 
 INSERT INTO `trx_bk` (`id_trx_bk`, `id_trx_pelanggan`, `pesanan`, `tgl`, `bahan`, `jumlah`) VALUES
-(1, 1, 'A1', '2019-07-09', 'A001', 100),
-(2, 1, 'A1', '2019-07-09', 'A002', 100),
-(3, 1, 'A1', '2019-07-09', 'A003', 100),
-(4, 1, 'A1', '2019-07-09', 'A004', 100),
-(5, 1, 'A1', '2019-07-09', 'A005', 100),
-(6, 1, 'A1', '2019-07-09', 'A006', 100),
-(7, 1, 'A1', '2019-07-09', 'A007', 100),
-(8, 1, 'A1', '2019-07-09', 'A008', 100),
-(9, 1, 'A1', '2019-07-09', 'A009', 100),
-(10, 1, 'A1', '2019-07-09', 'B001', 100),
-(11, 2, 'A1', '2019-07-09', 'A001', 100),
-(12, 2, 'A1', '2019-07-09', 'A002', 100),
-(13, 2, 'A1', '2019-07-09', 'A003', 100),
-(14, 2, 'A1', '2019-07-09', 'A004', 100),
-(15, 2, 'A1', '2019-07-09', 'A005', 100),
-(16, 2, 'A1', '2019-07-09', 'A006', 100),
-(17, 2, 'A1', '2019-07-09', 'A007', 100),
-(18, 2, 'A1', '2019-07-09', 'A008', 100),
-(19, 2, 'A1', '2019-07-09', 'A009', 100),
-(20, 2, 'A1', '2019-07-09', 'B001', 100),
-(21, 3, 'A2', '2019-07-16', 'A001', 200),
-(22, 3, 'A2', '2019-07-16', 'A002', 400),
-(23, 3, 'A2', '2019-07-16', 'A003', 200),
-(24, 3, 'A2', '2019-07-16', 'A004', 600),
-(25, 3, 'A2', '2019-07-16', 'A005', 800),
-(26, 3, 'A2', '2019-07-16', 'A006', 400),
-(27, 3, 'A2', '2019-07-16', 'A007', 400),
-(28, 3, 'A2', '2019-07-16', 'A008', 200),
-(29, 3, 'A2', '2019-07-16', 'A009', 400),
-(30, 3, 'A2', '2019-07-16', 'B001', 1400);
+(1, 1, 'A1', '2019-07-25', '8', 4),
+(2, 1, 'A1', '2019-07-25', '9', 48),
+(3, 2, 'A2', '2019-07-25', '8', 26),
+(4, 2, 'A2', '2019-07-25', '9', 338);
 
 --
 -- Trigger `trx_bk`
@@ -254,16 +254,6 @@ CREATE TABLE `trx_bm` (
   `pesanan` varchar(30) NOT NULL,
   `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `trx_bm`
---
-
-INSERT INTO `trx_bm` (`id_orderan`, `tgl`, `pesanan`, `jumlah`) VALUES
-(2, '2019-06-24', 'A001', 16849),
-(3, '2019-06-24', 'A001', 16849),
-(4, '2019-06-24', 'A001', 16849),
-(5, '2019-06-24', 'A001', 16849);
 
 --
 -- Trigger `trx_bm`
@@ -294,9 +284,8 @@ CREATE TABLE `trx_pelanggan` (
 --
 
 INSERT INTO `trx_pelanggan` (`id`, `id_barang`, `tgl`, `jumlah`) VALUES
-(1, 'A1', '2019-07-09', 100),
-(2, 'A1', '2019-07-09', 100),
-(3, 'A2', '2019-07-16', 200);
+(1, 'A1', '2019-07-25', 2),
+(2, 'A2', '2019-07-25', 13);
 
 -- --------------------------------------------------------
 
@@ -327,6 +316,12 @@ INSERT INTO `user` (`id`, `username`, `nama`, `jabatan`, `password`, `role`) VAL
 --
 
 --
+-- Indeks untuk tabel `bahan_baku`
+--
+ALTER TABLE `bahan_baku`
+  ADD PRIMARY KEY (`id_bahan_baku`);
+
+--
 -- Indeks untuk tabel `barang`
 --
 ALTER TABLE `barang`
@@ -344,6 +339,12 @@ ALTER TABLE `barang_tersedia`
 ALTER TABLE `komposisi`
   ADD PRIMARY KEY (`id_komposisi`),
   ADD KEY `id_barang` (`id_barang`);
+
+--
+-- Indeks untuk tabel `komposisis`
+--
+ALTER TABLE `komposisis`
+  ADD PRIMARY KEY (`id_komposisi`);
 
 --
 -- Indeks untuk tabel `m_barang`
@@ -397,16 +398,28 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `bahan_baku`
+--
+ALTER TABLE `bahan_baku`
+  MODIFY `id_bahan_baku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT untuk tabel `komposisi`
 --
 ALTER TABLE `komposisi`
-  MODIFY `id_komposisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_komposisi` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `komposisis`
+--
+ALTER TABLE `komposisis`
+  MODIFY `id_komposisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `orderan_untuk_supplier`
 --
 ALTER TABLE `orderan_untuk_supplier`
-  MODIFY `id_orderan_untuk_supplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_orderan_untuk_supplier` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `role`
@@ -418,19 +431,19 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT untuk tabel `trx_bk`
 --
 ALTER TABLE `trx_bk`
-  MODIFY `id_trx_bk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_trx_bk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `trx_bm`
 --
 ALTER TABLE `trx_bm`
-  MODIFY `id_orderan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_orderan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `trx_pelanggan`
 --
 ALTER TABLE `trx_pelanggan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

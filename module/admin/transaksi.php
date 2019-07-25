@@ -27,7 +27,7 @@
                   <td><?php echo $row['tgl']; ?></td>
                   <td><?php echo $row['jumlah']; ?></td>                  
                   <td>                                         
-                    <a href="?module=detail&id_detail=<?php echo $row['id']; ?>" target="_blank">Komposisi</a>
+                    <a href="?module=details&id_detail=<?php echo $row['id']; ?>" target="_blank">Komposisi</a>
                   </td>
                 </tr>
                 <?php } ?>

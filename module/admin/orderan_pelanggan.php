@@ -13,7 +13,7 @@
     
      <div class="span12">Order Pembuatan Roti<br><br></div>
     	<!-- awal -->
-      <form method="post" action="?module=barang_orderan">              
+      <form method="post" action="?module=barang_orderans">              
         <div class="span2">Tanggal</div>
         <div class="span10"><input type="date" name="tgl" required><br></div>
         <div class="span2">Pesanan</div>
