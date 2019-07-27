@@ -26,8 +26,8 @@
     		<div class="span10"><input type="text" name="id_barang" value="<?php echo $id_barang; ?>" readonly></input><br></div>
             <div class="span2">Nama Barang</div>
     		<div class="span10"><input type="text" name="nama_barang" value="<?php echo $nama_barang; ?>" required></input><br></div>
-            <div class="span2">Satuan</div>
-    		<div class="span10"><input type="text" name="satuan" value="<?php echo $satuan; ?>" required></input><br></div>
+<!--             <div class="span2">Satuan</div>
+    		<div class="span10"><input type="text" name="satuan" value="<?php echo $satuan; ?>" required></input><br></div> -->
     		<div class="span2">Jumlah</div>
             <div class="span10"><input type="text" name="jumlah" value="<?php echo $jumlah; ?>" required></input><br></div>
     		<div class="span2">Harga</div>

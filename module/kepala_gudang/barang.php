@@ -11,16 +11,15 @@
         	<!-- awal -->
         	<?php  
 				include 'module/koneksi.php';
+				// $query = mysqli_query($koneksi, "SELECT barang.*, bahan_baku.nama_bahan_baku as nama_bahan_baku FROM barang JOIN bahan_baku ON barang.id_barang = bahan_baku.id_bahan_baku");
 				$query = mysqli_query($koneksi, "SELECT * FROM barang");
 			?>        		
-        		<a href="?module=tambah"><i class="fas fa-plus-circle"></i> Tambah Barang </a><br><br>
+        		<a href="?module=tambah"><i class="fas fa-plus-circle"></i> Tambah Bahan Baku</a><br><br>
         		<div class="panel-body table-responsive">   
                     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 					<thead>
-						<th>No</th>
-						<th>Id barang</th>
-						<th>Nama barang</th>						
-						<th>Satuan</th>
+						<th>No</th>						
+						<th>Bahan Baku</th>												
 						<th>Biaya Pemesanan</th>
 						<th>Biaya Penyimpanan</th>
 						<th>EOQ</th>
@@ -34,10 +33,8 @@
 						$no = 1;
 						while ($row = mysqli_fetch_array($query)) { ?>
 						<tr>
-							<td><?php echo $no++; ?></td>
-							<td><?php echo $row['id_barang']; ?></td>
-							<td><?php echo $row['nama_barang']; ?></td>							
-							<td><?php echo $row['satuan']; ?></td>
+							<td><?php echo $no++; ?></td>							
+							<td><?php echo $row['nama_barang']; ?></td>								
 							<td><?php echo $row['biaya_pemesanan']; ?></td>
 							<td><?php echo $row['biaya_penyimpanan']; ?></td>
 							<td><?php echo $row['eoq']; ?></td>

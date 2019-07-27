@@ -11,7 +11,7 @@
 
 
     
-     <div class="span12">Order Pembuatan Roti<br><br></div>
+     <div class="span12"><b>Order Pembuatan Roti</b><br><br></div>
     	<!-- awal -->
       <form method="post" action="?module=barang_orderans">              
         <div class="span2">Tanggal</div>
@@ -28,9 +28,9 @@
           </select><br>    
         </div>
         <div class="span2">Jumlah</div> 
-        <div class="span10"><input type="text" name="jumlah" required><br><br></div>
-          
-        <div class="span12"><input type="submit" value="Simpan"></input></div>
+        <div class="span10"><input type="text" name="jumlah" placeholder="Jumlah" required><br><br></div>
+        <div class="span2">&nbsp;</div>
+        <div class="span10"><input type="submit" value="Simpan"></input></div>
     		</form>
 
     	<!-- akhir -->

@@ -4,7 +4,7 @@
          <!-- <div class="span12">Insert Komposisi<br><br></div> -->
           <!-- awal -->
           <form method="post" action="?module=simpan_komposisis">              
-            <div class="span2">Barang</div>
+            <div class="span2">Produk</div>
             <div class="span10"><select name="id_barang">
 	          <option></option>
 	          <?php include 'module/koneksi.php';

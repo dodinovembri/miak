@@ -3,23 +3,21 @@
     <!-- <div class="span6"> -->
     <!-- awal -->    
         <form method="post" action="?module=simpan">
-            <div class="span2">Barang</div>
+            <div class="span2">Bahan Baku</div>
             <div class="span10">
                     <select name="id_barang" required>
                       <option></option>
                       <?php include 'module/koneksi.php';
-                      $query = mysqli_query($koneksi, "SELECT * FROM m_barang");
+                      $query = mysqli_query($koneksi, "SELECT * FROM bahan_baku");
                       while ($row = mysqli_fetch_array($query)) { ?>
-                          <option value="<?php echo $row['id_barang']; ?>"><?php echo $row['nama_barang']; ?></option> 
+                          <option value="<?php echo $row['id_bahan_baku']; ?>"><?php echo $row['nama_bahan_baku']; ?></option> 
                       <?php } ?>
                         
                     </select><br>
             </div>
 
             <!-- <div class="span2">Nama Barang</div>
-            <div class="span10"><input type="text" name="nama_barang" placeholder="Nama Barang" required></input><br></div> -->
-            <div class="span2">Satuan</div>
-            <div class="span10"><input type="text" name="satuan" placeholder="Satuan Barang"  required></input><br></div>
+            <div class="span10"><input type="text" name="nama_barang" placeholder="Nama Barang" required></input><br></div> -->            
             <div class="span2">Jumlah</div>
             <div class="span10"><input type="text" name="jumlah" placeholder="Jumlah" required></input><br></div>
             <div class="span2">Harga</div>

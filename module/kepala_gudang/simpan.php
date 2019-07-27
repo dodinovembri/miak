@@ -3,11 +3,11 @@
 
 	$id_barang = $_POST['id_barang'];
 	
-	$q = mysqli_query($koneksi, "SELECT * FROM m_barang WHERE id_barang='$id_barang'");
+	$q = mysqli_query($koneksi, "SELECT * FROM bahan_baku WHERE id_bahan_baku='$id_barang'");
 	while ($r = mysqli_fetch_array($q)) {
-		$nama_barang = $r['nama_barang'];	
+		$nama_barang = $r['nama_bahan_baku'];	
 	}
-	$satuan = $_POST['satuan'];
+	// $satuan = $_POST['satuan'];
 	$jumlah = $_POST['jumlah']; //D
 	$harga = $_POST['harga']; //harga per
 	$biaya_pemesanan = $_POST['biaya_pemesanan']; //S
@@ -36,7 +36,7 @@
 			 </script>";
 	}
 	else{
-		$query = mysqli_query($koneksi, "INSERT INTO barang (`id_barang`, `nama_barang`, `jumlah`, `harga`, `satuan`, `biaya_pemesanan`, `biaya_penyimpanan`, `lt`, `sl`, `eoq`, `frekuensi_pemesanan`, `rop`, `ss`) VALUES ('$id_barang', '$nama_barang', '$jumlah', '$harga', '$satuan', '$biaya_pemesanan', '$biaya_penyimpanan', '$lt', '$sl', '$eoq', '$frekuensi_pemesanan', '$rop', '$ss')");
+		$query = mysqli_query($koneksi, "INSERT INTO barang (`id_barang`, `nama_barang`, `jumlah`, `harga`, `biaya_pemesanan`, `biaya_penyimpanan`, `lt`, `sl`, `eoq`, `frekuensi_pemesanan`, `rop`, `ss`) VALUES ('$id_barang', '$nama_barang', '$jumlah', '$harga', '$biaya_pemesanan', '$biaya_penyimpanan', '$lt', '$sl', '$eoq', '$frekuensi_pemesanan', '$rop', '$ss')");
 		if (!$query) {
 			die("Penyimpanan gagal");
 		}

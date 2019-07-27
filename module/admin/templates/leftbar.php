@@ -26,7 +26,7 @@
 
          <li id="menu" <?php if ($_GET['module'] == 'kelola_product') {
           echo 'class="active"';
-        } ?>><a href="?module=kelola_product"><i class="fas fa-cube fa-2x"></i><span>Kelola Product</span> </a> </li>
+        } ?>><a href="?module=kelola_product"><i class="fas fa-cube fa-2x"></i><span>Kelola Produk</span> </a> </li>
 
         <li id="menu" <?php if ($_GET['module'] == 'kelola_bahan_baku') {
           echo 'class="active"';
@@ -34,7 +34,7 @@
 
         <li id="menu" <?php if ($_GET['module'] == 'komposisi_barang') {
           echo 'class="active"';
-        } ?>><a href="?module=komposisi_barangs"><i class="fas fa-cubes fa-2x"></i><span>Kelola Komposisi Product</span> </a> </li>
+        } ?>><a href="?module=komposisi_barangs"><i class="fas fa-cubes fa-2x"></i><span>Kelola Komposisi Produk</span> </a> </li>
 
         <!-- <li <?php if ($_GET['module'] == 'tampil_barang') {
           echo 'class="active"';

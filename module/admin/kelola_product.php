@@ -18,13 +18,13 @@
 						return false;
 				}
 			</script>
-			<a href="?module=insert_product"><i class="fas fa-plus-circle"></i> Tambah Product</a><br><br>
+			<a href="?module=insert_product"><i class="fas fa-plus-circle"></i> Tambah Produk</a><br><br>
 			<div class="panel-body table-responsive">   
               <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 				<thead>
 					<th>No</th>
-					<th>Id Product</th>
-					<th>Nama Product</th>					
+					<th>Kode Produk</th>
+					<th>Nama Produk</th>					
 					<th>Action</th>
 				</thead>
 				<tbody>

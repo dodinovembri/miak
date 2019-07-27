@@ -10,15 +10,15 @@
         } ?>><a href="?module=orderan_kegudang"><i class="fas fa-user-tag"></i><span>Orderan Ke Gudang</span> </a> </li> -->
         <li id="menu" <?php if ($_GET['module'] == 'persediaan_barang') {
           echo 'class="active"';
-        } ?>><a href="?module=persediaan_barang"><i class="fas fa-cubes fa-2x"></i><span>Persediaan Barang</span> </a></li>
+        } ?>><a href="?module=persediaan_barang"><i class="fas fa-cubes fa-2x"></i><span>Persediaan Bahan Baku</span> </a></li>
 
          <li id="menu" <?php if ($_GET['module'] == 'barang') {
           echo 'class="active"';
-        } ?>><a href="?module=barang"><i class="fab fa-codepen fa-2x"></i><span>Barang</span> </a></li>
+        } ?>><a href="?module=barang"><i class="fab fa-codepen fa-2x"></i><span>Bahan Baku</span> </a></li>
 
         <li id="menu" <?php if ($_GET['module'] == 'pesanan_barang') {
           echo 'class="active"';
-        } ?>><a href="?module=pesanan_barang"><i class="fas fa-pencil-alt fa-2x"></i><span>Buat Pesanan Barang</span> </a> </li>
+        } ?>><a href="?module=pesanan_barang"><i class="fas fa-pencil-alt fa-2x"></i><span>Buat Pesanan</span> </a> </li>
 
         <li id="menu" <?php if ($_GET['module'] == 'pesanan_ss') {
           echo 'class="active"';

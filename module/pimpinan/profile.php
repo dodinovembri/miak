@@ -11,7 +11,7 @@
     	 	$id_role = $r['rol_user'];
     	 	$role = $r['rol'];
     	 } ?>
-      <div class="span12">Profile<br><br></div>
+      <div class="span12"><b>Profile</b><br><br></div>
     	<!-- awal -->
       <form method="post" action="?module=simpan_update_user">  
       	<input type="hidden" name="id" value="<?php echo $id; ?>"></input>            
@@ -30,10 +30,10 @@
               <option value="<?php echo $row['id_role']; ?>"><?php echo $row['role']; ?></option> 
           <?php } ?>
             
-          </select><br>   <br><br> 
+          </select><br>   <br>
         </div>
-       
-        <div class="span12"><input type="submit" value="Simpan"></input></div>
+       <div class="span2">&nbsp;</div>
+        <div class="span10"><input type="submit" value="Simpan"></input></div>
     		</form>
 
     	<!-- akhir -->
