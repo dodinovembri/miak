@@ -3,7 +3,8 @@
     
     	<?php include 'module/koneksi.php'; 
     	$username = $_SESSION['username'];
-    	$q = mysqli_query($koneksi, "SELECT user.*, role.*, role.role as rol, user.role as rol_user FROM user JOIN role ON user.role = role.id_role WHERE user.username='$username'"); 
+      // $q = mysqli_query($koneksi, "SELECT user.*, role.*, role.role as rol, user.role as rol_user FROM user JOIN role ON user.role = role.id_role WHERE user.username='$username'"); 
+    	$q = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username'"); 
     	while ($r = mysqli_fetch_array($q)) {
     	 	$id = $r['id'];
     	 	$nama = $r['nama'];
@@ -21,7 +22,7 @@
         <div class="span10"><input type="text" name="nama" value="<?php echo $nama; ?>" required><br></div>
         <div class="span2">Jabatan</div>
         <div class="span10"><input type="text" name="jabatan" value="<?php echo $jabatan; ?>" required><br></div>
-        <div class="span2">Role</div>
+        <!-- <div class="span2">Role</div>
         <div class="span10"><select name="role" required>
           <option value="<?php echo $id_role; ?>" ><?php echo $role; ?></option>
           <?php include 'module/koneksi.php';
@@ -31,7 +32,7 @@
           <?php } ?>
             
           </select><br>   <br>
-        </div>
+        </div> -->
        <div class="span2">&nbsp;</div>
         <div class="span10"><input type="submit" value="Simpan"></input></div>
     		</form>
